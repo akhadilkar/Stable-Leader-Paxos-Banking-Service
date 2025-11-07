@@ -1,0 +1,20 @@
+# Build
+go build -o paxos
+
+# Start 5 nodes (each in its own terminal)
+./paxos -id=1 -addr=:8001
+./paxos -id=2 -addr=:8002
+./paxos -id=3 -addr=:8003
+./paxos -id=4 -addr=:8004
+./paxos -id=5 -addr=:8005
+
+# Run the driver (in a separate terminal)
+./paxos -role=driver -csv=./CSE535-F25-Project-1-Testcases.csv
+
+At the driver prompt you can use:
+  status               # show leader flag for all nodes
+  who                  # show current leader id
+  db [id|all]          # print balances
+  log [id|all]         # print logs
+  continue             # proceed to next set
+  quit/exit            # stop
