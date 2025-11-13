@@ -9,7 +9,7 @@ go build -o paxos
 ./paxos -id=5 -addr=:8005
 
 # Run the driver (in a separate terminal)
-./paxos -role=driver -csv=./CSE535-F25-Project-1-Testcases.csv
+./paxos -role=driver -csv=./test_cases.csv
 
 At the driver prompt you can use:
   status               # show leader flag for all nodes
